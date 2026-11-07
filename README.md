@@ -1,38 +1,46 @@
-Lewis Joseph Feik | Cybersecurity Student at Hocking College
-📌 Project Overview
-This repository serves as a centralized hub for my hands-on experience in web application security. It documents my journey through various penetration testing environments, specifically focusing on the OWASP Top 10 vulnerabilities. By consolidating these labs, I aim to demonstrate a structured approach to identifying, exploiting, and mitigating security risks.
+# Web Application Security Lab Portfolio
 
-🛠️ Tech Stack & Tools
-Operating System: Kali Linux
+Documented web-security exercises by **Lewis Joseph Feik**, focused on understanding vulnerable application behavior and explaining the evidence collected in a training environment.
 
-Tools: Burp Suite, Nmap, SQLmap, Metasploit, Wireshark
+The current repository is a collection of **DVWA lab write-ups and screenshots**. It gives visitors a route through the documented exercises, their stated observations, and the security concepts each exercise illustrates.
 
-Environments: DVWA (Damn Vulnerable Web Application), TryHackMe, Hocking College Lab Infrastructure
+## Lab directory
 
-📂 Laboratory Directory
-1. Injection Vulnerabilities
-SQL Injection (SQLi): Manual and automated exploitation of backend databases to bypass authentication and extract sensitive data.
+| Lab | What the existing write-up documents | Evidence |
+|---|---|---|
+| [Stored cross-site scripting](Cross-Site-Scripting/dvwa-stored-xss-lab-master/README.md) | Stored input executing as JavaScript, persistence across page refreshes, and the risk of exposing browser-accessible session data. | [Screenshots](Cross-Site-Scripting/dvwa-stored-xss-lab-master/screenshots/) |
+| [Insecure file upload](File-Upload-Exploitation/dvwa-file-upload-lab-master/README.md) | Uploading executable content in a deliberately vulnerable application and observing server-side command execution. | [Screenshots](File-Upload-Exploitation/dvwa-file-upload-lab-master/screenshots/) |
+| [Legacy mixed lab archive](SQL-Injection/dvwa-stored-xss-lab/README.md) | A larger historical collection whose README currently describes file-upload/RCE work and whose screenshots cover several lab steps. | [Screenshots](SQL-Injection/dvwa-stored-xss-lab/screenshots/) |
 
-Command Injection: Testing web inputs to execute arbitrary system commands on the host server.
+**Directory naming note:** the legacy archive lives under `SQL-Injection`, but its current README is titled "DVWA File Upload → Remote Code Execution (RCE)." The path is preserved so existing links keep working. Its folder name alone should not be treated as evidence of a completed SQL-injection exercise.
 
-2. Broken Access Control & XSS
-Cross-Site Scripting (XSS): Practicing Stored, Reflected, and DOM-based XSS attacks to understand session hijacking and defacement.
+## What to look for
 
-File Upload Vulnerabilities: Exploiting insecure file upload forms to gain Remote Code Execution (RCE) via web shells.
+- **Objective:** the application behavior being investigated.
+- **Method:** the controlled steps recorded in the individual lab.
+- **Observation:** the page, output, or screenshot supporting a conclusion.
+- **Impact and remediation:** why the behavior matters and what a defensive fix would need to address.
 
-3. Reconnaissance & Discovery
-Directory brute-forcing, sub-domain enumeration, and service version identification.
+The existing lab notes identify **Kali Linux in UTM, Apache, PHP, and DVWA** as their environment. The repository's present contents support these documented exercises; they do not establish a broader tool assessment or a production penetration test.
 
-🎓 Academic Context
-This portfolio is part of my technical development at Hocking College. Each lab entry includes:
+## Reading and reproducing
 
-Objective: What vulnerability is being tested.
+Start with a linked lab README, then compare its stated result with its supporting screenshots. This repository does not include an application runtime, dependency manifest, or automated test suite; the vulnerable training application must be supplied separately.
 
-Methodology: Steps taken to identify the flaw.
+```bash
+git clone https://github.com/FeikL2002/Web-App-Penetration-Testing.git
+cd Web-App-Penetration-Testing
+```
 
-Exploitation: Proof of Concept (PoC) demonstrating the risk.
+Reproduction belongs in a local training environment or a system whose owner has explicitly authorized testing. Keep DVWA and other intentionally vulnerable applications isolated from public access. Published screenshots are historical evidence rather than a fresh verification of a running target.
 
-Remediation: Best practices to patch the vulnerability.
+## Portfolio context
 
-⚠️ Disclaimer
-All activities documented in this repository were performed in controlled, legal environments for educational purposes only. Unauthorized access to computer systems is illegal and unethical.
+These exercises support my study of web application security, Linux command-line work, evidence collection, and technical reporting. The root index explains the material currently committed; individual lab write-ups retain their original detail and context.
+
+- [Hocking College coursework and reference notes](https://github.com/FeikL2002/HockingCollege)
+- [Software and engineering projects](https://github.com/FeikL2002/Engineered-Solutions-self-made-)
+
+## License
+
+See [LICENSE](LICENSE). Bundled materials and third-party software retain their respective notices and terms.
